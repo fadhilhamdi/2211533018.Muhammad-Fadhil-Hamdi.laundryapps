@@ -8,6 +8,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.qkeglf.felaundry.R;
+
 public class PromoActivity extends AppCompatActivity {
 
     @Override

@@ -3,8 +3,6 @@ package com.qkeglf.felaundry;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -15,9 +13,11 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-String username;
-CardView cvLaundry, cvLayanan, cvPelanggan, cvPromo;
-//CardView
+
+    String username;
+    CardView cvLaundry, cvLayanan, cvPelanggan, cvPromo;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,49 +28,41 @@ CardView cvLaundry, cvLayanan, cvPelanggan, cvPromo;
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        username = getIntent().getStringExtra("username");
+        Toast.makeText(this, ""+username, Toast.LENGTH_SHORT).show();
 
-        // kenalkan widget didalam method create
-        CardView cvLaundry = (CardView) findViewById(R.id.cvLaundry);
-        CardView cvLayanan = (CardView) findViewById(R.id.cvLayanan);
-        CardView cvPelanggan = (CardView) findViewById(R.id.cvPelanggan);
-        CardView cvPromo = (CardView) findViewById(R.id.cvPromo);
+        cvLaundry = (CardView) findViewById(R.id.cvLaundry);
+        cvLayanan = (CardView) findViewById(R.id.cvLayanan);
+        cvPelanggan = (CardView) findViewById(R.id.cvPelanggan);
+        cvPromo = (CardView) findViewById(R.id.cvPromo);
 
         cvLaundry.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v){
                 Intent intent = new Intent(MainActivity.this, LaundryActivity.class);
                 startActivity(intent);
             }
         });
-
         cvLayanan.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v){
                 Intent intent = new Intent(MainActivity.this, LayananActivity.class);
                 startActivity(intent);
             }
-
         });
-
         cvPelanggan.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v){
                 Intent intent = new Intent(MainActivity.this, PelangganActivity.class);
                 startActivity(intent);
             }
-
         });
-
         cvPromo.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v){
                 Intent intent = new Intent(MainActivity.this, PromoActivity.class);
                 startActivity(intent);
             }
-
         });
-        username = getIntent().getStringExtra("username");
-        Toast.makeText(this, ""+username, Toast.LENGTH_SHORT).show();
-
     }
 }

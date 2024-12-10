@@ -1,5 +1,4 @@
 package com.qkeglf.felaundry;
-
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;

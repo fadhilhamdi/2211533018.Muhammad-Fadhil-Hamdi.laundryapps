@@ -6,29 +6,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="pelanggan.LayananAddActivity">
+    android:background="@color/quinary"
+    tools:context=".LayananActivity">
 
     <LinearLayout
         android:layout_margin="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <Button
-            android:id="@+id/btnPelAdd"
-            android:backgroundTint="@color/colorbackground"
-            android:padding="16dp"
-            android:textSize="12sp"
+            android:id="@+id/btnLayAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
-            android:text="Tambah Layanan">
+            android:backgroundTint="@color/primary"
+            android:padding="16dp"
+            android:text="Tambah Layanan"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:textStyle="bold">
+
         </Button>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvLayanan"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="16dp">
         </androidx.recyclerview.widget.RecyclerView>
+
     </LinearLayout>
 
 </LinearLayout>
